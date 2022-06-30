@@ -1,6 +1,11 @@
 // You must RETURN your result in each function!
 
 function printNums(nums) {
+  const arrayToReturn = []
+  nums.forEach((number) => {
+    arrayToReturn.push(number)
+  })
+  return arrayToReturn
   /**
    *  Using .forEach, add each number in the nums array to a new array.
    * @param nums => [1,2,3,4]
@@ -8,6 +13,12 @@ function printNums(nums) {
 }
 
 function returnSums(nums) {
+  const arrayToReturn = []
+  nums.forEach((number, index) => {
+    result = number + index
+    arrayToReturn.push(result)
+  })
+  return arrayToReturn
   /**
    * Using forEach, push the sum of n plus the index
    * to a new array and return the new array
@@ -16,6 +27,12 @@ function returnSums(nums) {
 }
 
 function returnTotal(objs) {
+  let total = 0
+
+  objs.forEach((value) => {
+    total = total + value.n /* the key */
+  })
+  return total
   /**
    * Using forEach return a number that is the total sum of all numbers in the array of objects.
    * The key for each object will be n
@@ -24,6 +41,11 @@ function returnTotal(objs) {
 }
 
 function printMoney(decimals) {
+  let newArray = []
+  decimals.map((num) => {
+    newArray.push(`$${num.toFixed(2)}`)
+  })
+  return newArray
   /**
    * @param decimals => [2.30, 2.40, 32.99]
    * Using .map, return an array of decimals formatted as dollars.
@@ -36,6 +58,12 @@ function printMoney(decimals) {
 }
 
 function returnAllTrueValues(values) {
+  const happy = values.filter((val) => {
+    if (val.happy === true) {
+      return val
+    }
+  })
+  return happy
   /**
    * @param values => [{name: 'Joe', happy:false}]
    * Using .filter, return an array of objects where happy equals true
@@ -43,6 +71,15 @@ function returnAllTrueValues(values) {
 }
 
 function addTwo(nums) {
+  const addTwo = nums
+    .map((num) => {
+      return num + 2
+    })
+    .reduce((sum, value) => {
+      return sum + value
+    })
+
+  return addTwo
   /**
    * @param nums => [1,2,3,4]
    * Using .reduce, return the total sum of all numbers.
@@ -53,6 +90,10 @@ function addTwo(nums) {
 }
 
 function joinStrings(strings) {
+  const newString = strings.reduce((sum, value) => {
+    return sum + value
+  })
+  return newString
   /**
    * @param strings => ['g', 'f', 'z']
    * Using .reduce, return a new string containing each string from the strings array.
